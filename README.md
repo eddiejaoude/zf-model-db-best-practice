@@ -1,4 +1,4 @@
-zf-model-api-best-practice
+zf-model-db-best-practice
 ==========================
 
 Exposing a database as a webservice using best practices (inc. unit testing, mocks, ant, continuous integration etc)
