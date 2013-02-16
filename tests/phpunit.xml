@@ -10,6 +10,7 @@
     <testsuites>
         <testsuite name="Github">
             <file>./application/default/models/mappers/ItemSuccessTest.php</file>
+            <file>./application/default/models/mappers/ItemNoResultsTest.php</file>
         </testsuite>
     </testsuites>
 

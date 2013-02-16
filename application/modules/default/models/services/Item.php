@@ -14,7 +14,7 @@ class Default_Model_Service_Item extends Default_Model_Service_Core
      *
      * @param $id
      *
-     * @throws Github_Model_Service_Exception_Empty
+     * @throws Default_Model_Service_Exception_Empty
      * @internal param string $id
      *
      * @return Default_Model_Entity_Item
@@ -22,14 +22,14 @@ class Default_Model_Service_Item extends Default_Model_Service_Core
     public function findByUsernameId($id)
     {
         if (empty($id)) {
-            throw new Github_Model_Service_Exception_Empty('$username is required & cannot be empty.');
+            throw new Default_Model_Service_Exception_Empty('$id is required & cannot be empty.');
         }
 
-        $userEntity = new Github_Model_Entity_User();
-        $userEntity->setId($id);
+        $acccountEntity = new Default_Model_Entity_Account();
+        $acccountEntity->setId($id);
 
-        $user = $this->getMapper()->findByUsernameId($userEntity);
-        return $user;
+        $account = $this->getMapper()->findByUsernameId($acccountEntity);
+        return $account;
     }
 
 

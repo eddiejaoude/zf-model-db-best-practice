@@ -5,7 +5,7 @@
 class Test_Default_Model_Mock_ItemSuccess implements Default_Model_Dao_Interface, Default_Model_Dao_ItemInterface
 {
     /**
-     * @return Test_Github_Model_Mock_RepoSuccess
+     * @return Test_Default_Model_Mock_RepoSuccess
      */
     public function getDatasource() {
         return $this;

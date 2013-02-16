@@ -19,10 +19,12 @@ class Default_Model_Mapper_Item extends Default_Model_Mapper_Core
     {
         $rows = $this->getDao()->findByAccountId($account);
 
+        // if no results
         if (0 == count($rows)) {
-            return;
+            return $account;
         }
 
+        // mapper data
         $items = array();
         foreach ($rows as $k=>$v) {
             $item = new Default_Model_Entity_Item;
