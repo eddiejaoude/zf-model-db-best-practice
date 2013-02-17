@@ -8,9 +8,10 @@
     verbose="true">
 
     <testsuites>
-        <testsuite name="Github">
+        <testsuite name="Default">
             <file>./application/default/models/mappers/ItemSuccessTest.php</file>
             <file>./application/default/models/mappers/ItemNoResultsTest.php</file>
+            <file>./application/default/models/services/ItemSuccessTest.php</file>
         </testsuite>
     </testsuites>
 

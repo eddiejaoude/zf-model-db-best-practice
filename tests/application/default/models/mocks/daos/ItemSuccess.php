@@ -2,7 +2,8 @@
 /**
  * Class Test_Github_Model_Mock_RepoSuccess
  */
-class Test_Default_Model_Mock_ItemSuccess implements Default_Model_Dao_Interface, Default_Model_Dao_ItemInterface
+class Test_Default_Model_Mock_Dao_ItemSuccess
+    implements Default_Model_Dao_Interface, Default_Model_Dao_ItemInterface
 {
     /**
      * @return Test_Default_Model_Mock_RepoSuccess
@@ -20,7 +21,7 @@ class Test_Default_Model_Mock_ItemSuccess implements Default_Model_Dao_Interface
      */
     public function findByAccountId(Default_Model_Entity_Account $account)
     {
-        $file = file_get_contents(APPLICATION_TESTS . '/default/models/mocks/json/findByAccountId.json');
+        $file = file_get_contents(APPLICATION_TESTS . '/default/models/mocks/daos/json/findByAccountId.json');
         $json = Zend_Json::decode($file, Zend_Json::TYPE_OBJECT);
         return $json;
     }

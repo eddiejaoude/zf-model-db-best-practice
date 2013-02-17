@@ -19,7 +19,7 @@ class Default_Model_Service_Item extends Default_Model_Service_Core
      *
      * @return Default_Model_Entity_Item
      */
-    public function findByUsernameId($id)
+    public function findByAccountId($id)
     {
         if (empty($id)) {
             throw new Default_Model_Service_Exception_Empty('$id is required & cannot be empty.');
@@ -28,7 +28,7 @@ class Default_Model_Service_Item extends Default_Model_Service_Core
         $acccountEntity = new Default_Model_Entity_Account();
         $acccountEntity->setId($id);
 
-        $account = $this->getMapper()->findByUsernameId($acccountEntity);
+        $account = $this->getMapper()->findByAccountId($acccountEntity);
         return $account;
     }
 

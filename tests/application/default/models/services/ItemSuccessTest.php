@@ -1,25 +1,29 @@
 <?php
 
-require_once(APPLICATION_TESTS . '/default/models/mocks/daos/ItemSuccess.php');
-class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
+require_once(APPLICATION_TESTS . '/default/models/mocks/mappers/ItemSuccess.php');
+class Test_Default_Model_Service_ItemSuccessTest extends BaseTestCase {
 
     /**
      * Mapper object
      *
      * @author Eddie Jaoude
-     * @param object $model
+     * @param object $_mapper
      *
      */
     private $_mapper;
 
     /**
-     * Dao
+     * Service object
      *
-     * @var Test_Default_Model_Mock_Dao_ItemSuccess
+     * @author Eddie Jaoude
+     * @param object $_service
+     *
      */
-    private $_dao;
+    private $_service;
 
     /**
+     * Mock object
+     *
      * @var array
      */
     private $_mock;
@@ -33,9 +37,9 @@ class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
      *
      */
     public function setup() {
-        $this->_dao = new Test_Default_Model_Mock_Dao_ItemSuccess();
-        $this->_mock = $this->_dao->findByAccountId(new Default_Model_Entity_Account(array('id' => 2)));
-        $this->_mapper = new Default_Model_Mapper_Item($this->_dao);
+        $this->_mapper = new Test_Default_Model_Mock_Mapper_ItemSuccess();
+        $this->_mock = $this->_mapper->findByAccountId(new Default_Model_Entity_Account());
+        $this->_service = new Default_Model_Service_Item($this->_mapper);
     }
 
     /**
@@ -47,9 +51,9 @@ class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
      *
      */
     public function testObjectInstance() {
-        $this->assertEquals(true, is_object($this->_mapper));
+        $this->assertEquals(true, is_object($this->_service));
     }
-    
+
     /**
      * Find by username
      *
@@ -60,21 +64,24 @@ class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
      */
     public function testFindByAccountId() {
         $accountId = 2;
-        $result = $this->_mapper->findByAccountId(new Default_Model_Entity_Account(array('id' => $accountId)));
+        $result = $this->_service->findByAccountId($accountId);
 
         $this->assertEquals(true, is_object($result));
         $this->assertEquals(true, $result instanceof Default_Model_Entity_Account);
         $this->assertEquals(true, is_int($result->getId()));
         $this->assertEquals($accountId, $result->getId());
 
+        $mock = $this->_mock->getItems();
         foreach ($result->getItems() as $k=>$v) {
-            $this->assertEquals($this->_mock[$k-1]->id, $v->getId());
-            $this->assertEquals($this->_mock[$k-1]->title, $v->getTitle());
-            $this->assertEquals($this->_mock[$k-1]->description, $v->getDescription());
+            $this->assertEquals($mock[$k]->getId(), $v->getId());
+            $this->assertEquals($mock[$k]->getTitle(), $v->getTitle());
+            $this->assertEquals($mock[$k]->getDescription(), $v->getDescription());
         }
 
 
     }
+
+
 
 }
 

@@ -2,6 +2,6 @@
 /**
  * Class Github_Model_Mapper_Exception
  */
-class Github_Model_Mapper_Exception extends Exception {
+class Default_Model_Mapper_Exception extends Exception {
 
 }

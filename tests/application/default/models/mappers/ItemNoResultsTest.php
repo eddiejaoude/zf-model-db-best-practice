@@ -1,6 +1,6 @@
 <?php
 
-require_once(APPLICATION_TESTS . '/default/models/mocks/ItemNoResults.php');
+require_once(APPLICATION_TESTS . '/default/models/mocks/daos/ItemNoResults.php');
 class Test_Default_Model_Mapper_ItemNoResultsTest extends BaseTestCase {
 
     /**
@@ -15,7 +15,7 @@ class Test_Default_Model_Mapper_ItemNoResultsTest extends BaseTestCase {
     /**
      * Dao
      *
-     * @var Test_Default_Model_Mock_ItemSuccess
+     * @var Test_Default_Model_Mock_Dao_ItemSuccess
      */
     private $_dao;
 
@@ -33,7 +33,7 @@ class Test_Default_Model_Mapper_ItemNoResultsTest extends BaseTestCase {
      *
      */
     public function setup() {
-        $this->_dao = new Test_Default_Model_Mock_ItemNoResults();
+        $this->_dao = new Test_Default_Model_Mock_Dao_ItemNoResults();
         $this->_mock = $this->_dao->findByAccountId(new Default_Model_Entity_Account(array('id' => 2)));
         $this->_mapper = new Default_Model_Mapper_Item($this->_dao);
     }

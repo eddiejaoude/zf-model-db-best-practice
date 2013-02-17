@@ -1,7 +1,7 @@
 <?php
 /**
- * Class Github_Model_Service_Exception
+ * Class Default_Model_Service_Exception
  */
-class Github_Model_Service_Exception extends Exception {
+class Default_Model_Service_Exception extends Exception {
 
 }
