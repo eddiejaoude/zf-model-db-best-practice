@@ -1,8 +1,9 @@
 <?php
 /**
- * Class Default_Model_Dao_RepoInterface
+ * Class item interface
  */
-interface Default_Model_Dao_ItemInterface {
+interface Default_Model_Dao_ItemInterface
+{
 
     /**
      * @param Default_Model_Entity_Account $account
