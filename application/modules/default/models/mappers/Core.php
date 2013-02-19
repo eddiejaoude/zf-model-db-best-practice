@@ -2,8 +2,7 @@
 /**
  * Base mapper
  *
- * @author  Eddie Jaoude
- * @package Github
+ * @package default
  */
 abstract class Default_Model_Mapper_Core implements Default_Model_Mapper_Interface
 {

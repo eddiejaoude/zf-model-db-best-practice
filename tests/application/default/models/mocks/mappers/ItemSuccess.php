@@ -30,7 +30,7 @@ class Test_Default_Model_Mock_Mapper_ItemSuccess
                 ->setTitle('title ' . $i)
                 ->setDescription('description ' . $i);
 
-            $account->addRepo($item);
+            $account->addItem($item);
         }
 
         return $account;
