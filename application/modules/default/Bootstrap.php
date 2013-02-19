@@ -3,11 +3,11 @@
 /**
  * Application bootstrap
  *
- * @author Eddie Jaoude
- * @package Github
+ * @package default
  *
  */
-class Github_Bootstrap extends Zend_Application_Module_Bootstrap {
+class Default_Bootstrap extends Zend_Application_Module_Bootstrap
+{
    
 
 }

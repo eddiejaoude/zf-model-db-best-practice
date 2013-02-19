@@ -3,8 +3,7 @@
 /**
  * Item service
  *
- * @author  Eddie Jaoude
- * @package Default
+ * @package default
  */
 class Default_Model_Service_Item extends Default_Model_Service_Core
 {

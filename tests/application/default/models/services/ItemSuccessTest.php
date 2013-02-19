@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Service item successful
+ */
 require_once(APPLICATION_TESTS . '/default/models/mocks/mappers/ItemSuccess.php');
 class Test_Default_Model_Service_ItemSuccessTest extends BaseTestCase {
 
@@ -36,7 +38,8 @@ class Test_Default_Model_Service_ItemSuccessTest extends BaseTestCase {
      * @return null
      *
      */
-    public function setup() {
+    public function setup()
+    {
         $this->_mapper = new Test_Default_Model_Mock_Mapper_ItemSuccess();
         $this->_mock = $this->_mapper->findByAccountId(new Default_Model_Entity_Account());
         $this->_service = new Default_Model_Service_Item($this->_mapper);
@@ -50,7 +53,8 @@ class Test_Default_Model_Service_ItemSuccessTest extends BaseTestCase {
      * @return null
      *
      */
-    public function testObjectInstance() {
+    public function testObjectInstance()
+    {
         $this->assertEquals(true, is_object($this->_service));
     }
 
@@ -62,7 +66,8 @@ class Test_Default_Model_Service_ItemSuccessTest extends BaseTestCase {
      * @return null
      *
      */
-    public function testFindByAccountId() {
+    public function testFindByAccountId()
+    {
         $accountId = 2;
         $result = $this->_service->findByAccountId($accountId);
 

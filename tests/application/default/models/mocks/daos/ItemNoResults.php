@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Mock Dao item no result
+ */
 class Test_Default_Model_Mock_Dao_ItemNoResults
     implements Default_Model_Dao_Interface, Default_Model_Dao_ItemInterface
 {
@@ -7,7 +9,8 @@ class Test_Default_Model_Mock_Dao_ItemNoResults
     /**
      * @return Test_Default_Model_Mock_RepoSuccess
      */
-    public function getDatasource() {
+    public function getDatasource()
+    {
         return $this;
     }
 

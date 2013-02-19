@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Test_Default_Model_Mock_RepoSuccess
+ * Mock mapper item successful
  */
 class Test_Default_Model_Mock_Mapper_ItemSuccess
     implements Default_Model_Mapper_Interface

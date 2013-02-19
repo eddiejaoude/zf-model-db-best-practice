@@ -1,7 +1,10 @@
 <?php
-
+/**
+ * Mapper item successful test
+ */
 require_once(APPLICATION_TESTS . '/default/models/mocks/daos/ItemSuccess.php');
-class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
+class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase
+{
 
     /**
      * Mapper object
@@ -32,7 +35,8 @@ class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
      * @return null
      *
      */
-    public function setup() {
+    public function setup()
+    {
         $this->_dao = new Test_Default_Model_Mock_Dao_ItemSuccess();
         $this->_mock = $this->_dao->findByAccountId(new Default_Model_Entity_Account(array('id' => 2)));
         $this->_mapper = new Default_Model_Mapper_Item($this->_dao);
@@ -46,7 +50,8 @@ class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
      * @return null
      *
      */
-    public function testObjectInstance() {
+    public function testObjectInstance()
+    {
         $this->assertEquals(true, is_object($this->_mapper));
     }
     
@@ -58,7 +63,8 @@ class Test_Default_Model_Mapper_ItemSuccessTest extends BaseTestCase {
      * @return null
      *
      */
-    public function testFindByAccountId() {
+    public function testFindByAccountId()
+    {
         $accountId = 2;
         $result = $this->_mapper->findByAccountId(new Default_Model_Entity_Account(array('id' => $accountId)));
 

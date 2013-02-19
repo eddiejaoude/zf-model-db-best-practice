@@ -3,11 +3,11 @@
 /**
  * Application bootstrap
  *
- * @author Eddie Jaoude
  * @package Application
  *
  */
-class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
+class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
+{
 
     /**
      * Configuration

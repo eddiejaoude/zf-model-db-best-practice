@@ -4,7 +4,7 @@
  * Default model service core
  *
  * @author  Eddie Jaoude
- * @package Default
+ * @package default
  */
 abstract class Default_Model_Service_Core
 {
