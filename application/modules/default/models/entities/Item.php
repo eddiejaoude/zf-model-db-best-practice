@@ -1,6 +1,8 @@
 <?php
 /**
 * Account entity
+ *
+ * @package default
 */
 class Default_Model_Entity_Item extends Default_Model_Entity_Core
 {

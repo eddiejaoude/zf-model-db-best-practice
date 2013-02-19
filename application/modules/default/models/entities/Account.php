@@ -1,6 +1,8 @@
 <?php
 /**
  * Account entity
+ *
+ * @package default
  */
 class Default_Model_Entity_Account extends Default_Model_Entity_Core
 {
@@ -38,7 +40,7 @@ class Default_Model_Entity_Account extends Default_Model_Entity_Core
      *
      * @param int $id
      *
-     * @return Github_Model_Entity_User
+     * @return Default_Model_Entity_User
      */
     public function setId($id)
     {
@@ -80,9 +82,23 @@ class Default_Model_Entity_Account extends Default_Model_Entity_Core
      *
      * @return Default_Model_Entity_Account
      */
-    public function addRepo(Default_Model_Entity_Item $item)
+    public function addItem(Default_Model_Entity_Item $item)
     {
         $this->_items[$item->getId()] = $item;
+
+        return $this;
+    }
+
+    /**
+     * Remove item
+     *
+     * @param int $id
+     *
+     * @return Default_Model_Entity_Account
+     */
+    public function removeItem($id)
+    {
+        unset($this->_items[$id]);
 
         return $this;
     }

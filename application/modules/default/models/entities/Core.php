@@ -1,13 +1,31 @@
 <?php
-abstract class Default_Model_Entity_Core {
+/**
+ * Class Default_Model_Entity_Core
+ *
+ * @package default
+ */
+abstract class Default_Model_Entity_Core
+{
 
-    public function __construct(array $options = null) {
+    /**
+     * @param array|null $options
+     */
+    public function __construct(array $options = null)
+    {
         if (is_array($options)) {
             $this->setOptions($options);
         }
     }
 
-    public function setOptions(array $options) {
+    /**
+     * Set options
+     *
+     * @param array $options
+     *
+     * @return Default_Model_Entity_Core
+     */
+    public function setOptions(array $options)
+    {
         $methods = get_class_methods($this);
         foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);

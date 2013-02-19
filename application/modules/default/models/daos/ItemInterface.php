@@ -1,6 +1,8 @@
 <?php
 /**
  * Class item interface
+ *
+ * @package default
  */
 interface Default_Model_Dao_ItemInterface
 {
