@@ -70,15 +70,10 @@ class Test_Default_Model_Service_ItemFailureTest extends BaseTestCase {
     {
         $accountId = null;
 
-        try {
-            $result = $this->_service->findByAccountId($accountId);
-        } catch (Default_Model_Service_Exception_Empty $e) {
-            return;
-        } catch (Exception $e) {
-            $this->fail('Wrong exception thrown');
-        }
-        $this->fail('No exception thrown');
+        $this->setExpectedException(
+            'Default_Model_Service_Exception_Empty', '$id is required & cannot be empty.');
 
+        $this->_service->findByAccountId($accountId);
     }
 
 
